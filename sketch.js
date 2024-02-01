@@ -64,12 +64,12 @@ function draw() {
 	}
 
 	//the next grid
-
 	let nextGrid = make2DArray(cols, rows);
 	for (let i = 0; i < cols; i++) {
 		for (let j = 0; j < rows; j++) {
 			let state = grid[i][j];
 			if (state === 1) {
+
 				// look below to check if the cell has a state of one or not
 				let below = grid[i][j + 1];
 				let direction = 1;
@@ -103,8 +103,7 @@ function draw() {
 	grid = nextGrid;
 }
 
-// addd grain of sand on moouse click
-
+// addd grain of sand on moouse drag
 function mouseDragged() {
 	let mouseColumn = floor(mouseX / w);
 	let mouseRow = floor(mouseY / w);
@@ -124,6 +123,7 @@ function mouseDragged() {
 	}
 }
 
+// addd grain of sand on moouse click
 function mousePressed() {
 	let mouseColumn = floor(mouseX / w);
 	let mouseRow = floor(mouseY / w);
